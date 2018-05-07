@@ -1,4 +1,4 @@
-# File: 2.genbank table parser and import
+# File: 4. coding regions table parser and import
 # Version: v1.0 
 # Date: 6/5/2018 
 # Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
