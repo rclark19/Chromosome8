@@ -41,7 +41,7 @@ for i in data:
         for match in p.finditer(i):
                 source.append(match.group(1))
 
-genbank = list(zip(accession, gene, product, source))  # zip information together
+genbank = list(zip(accession, gene, product, source))       # zip data together
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
