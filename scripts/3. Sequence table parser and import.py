@@ -2,7 +2,6 @@
 # Data parser for Sequence information only
 
 import re
-import json
 import pymysql
 
 #PHASE ONE - Parse data from Genbank file for Sequence MySQL table
@@ -31,10 +30,10 @@ sequence_data = list(zip(accession, sequence))  # zip information together to cr
 
 # Set parameters 
 dbname = 'chromosome8'
-dbhost = '127.0.0.1'
-dbuser = 'root'
-dbpass = 'sasha9093' 
-port   = 3306
+dbhost = 
+dbuser =
+dbpass = 
+port   = 
 
 # Connect to MySQL Database 
 cnx = pymysql.connect(host=dbhost, port=port, user=dbuser, passwd=dbpass, db=dbname)
