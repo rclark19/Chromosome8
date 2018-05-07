@@ -13,29 +13,30 @@ import pymysql
 #PHASE ONE - Parse data from Genbank file for Coding Sequence MySQL table
 
 with open ('chrom_CDS_8', 'r') as f:
-    chrom8 = f.read().replace('\n', '')                                # removing new lines 
-    seq = chrom8.split('//')                                           # split string at // to create list 
+    chrom8 = f.read().replace('\n', '').replace('(', '').replace('<', '')  # removing new lines, ( and <
+    seq = chrom8.split('//')                                               # split string at // to create list 
 
-p = re.compile(r'VERSION\s+(\w+\d+.\d+)')                              # regex to extract the accession number - format 'XX000000.0'
+p = re.compile(r'VERSION\s+(\w+\d+.\d+)')                                  # regex to extract the accession number - format 'XX000000.0'
 accession = []
 for i in seq:
         for match in p.finditer(i):
                 accession.append(match.group(1))
 
-p = re.compile(r'codon_start=(\d+)')                                   # regex to extact codon_start number 
+p = re.compile(r'codon_start=(\d+)')                                       # regex to extact codon_start number 
 codon_start = []
 for i in seq:
         for match in p.finditer(i):
-                pos_1 = re.sub(r'join', '', match.group(1))            # regex to remove 'join' where it occurs
+                pos_1 = re.sub(r'join', '', match.group(1))                # regex to remove 'join' where it occurs
                 positions.append(pos_1)
-
-p = re.compile(r'CDS\s+([^ ]+)')                                       # regex to extact coding regions
+            
+p = re.compile(r'CDS\s+([^ ,]+)')                                          # regex to extact coding regions
 positions = []
 for i in seq:
         for match in p.finditer(i):
-                positions.append(match.group(1))
-
-coding_sequence = list(zip(accession, codon_start, positions))         # zip data together 
+                pos_1 = re.sub(r'join', '', match.group(1))                # regex to remove splice varants 
+                positions.append(pos_1)            
+                
+coding_sequence = list(zip(accession, codon_start, positions))             # zip data together 
 
 # ---------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
@@ -58,4 +59,4 @@ cnx.commit()
 
 cnx.close()
 
-print('complete coding regions import')                              # confirm data has been imported
+print('complete coding regions import')                                  # confirm data has been imported
