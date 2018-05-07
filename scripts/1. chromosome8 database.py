@@ -27,7 +27,7 @@ cursor.execute(database)
 cnx_database ="USE chromosome8"
 cursor.execute(cnx_database)
 
-genbank_table = "CREATE TABLE genbank (accession VARCHAR(15) NOT NULL, gene VARCHAR(100), product VARCHAR(300), location VARCHAR(50), PRIMARY KEY(accession), INDEX(source)) ENGINE=InnoDB;"
+genbank_table = "CREATE TABLE genbank (accession VARCHAR(15) NOT NULL, gene VARCHAR(100), product VARCHAR(300), location VARCHAR(50), PRIMARY KEY(accession)) ENGINE=InnoDB;"
 cursor.execute(genbank_table)
 
 sequence_table = "CREATE TABLE sequence (id MEDIUMINT NOT NULL AUTO_INCREMENT, accession VARCHAR(20) NOT NULL, sequence TEXT (100000) NOT NULL, PRIMARY KEY(id), FOREIGN KEY(accession) REFERENCES genbank(accession)) ENGINE=InnoDB;"
