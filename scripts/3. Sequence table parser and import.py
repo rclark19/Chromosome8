@@ -29,7 +29,7 @@ for i in seq:
                 seq_1 = re.sub("[^atgcn-]", "", match.group(1))       # regex to remove digits from sequence data 
                 sequence.append(seq_1)
         
-sequence_data = list(zip(accession, sequence))  # zip data together 
+sequence_data = list(zip(accession, sequence))                        # zip data together 
 
 # -------------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
