@@ -1,4 +1,4 @@
-# File: 2.genbank table parser and import
+# File: 3.sequence table parser and import
 # Version: v1.0 
 # Date: 6/5/2018 
 # Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
@@ -29,7 +29,7 @@ for i in seq:
                 seq_1 = re.sub("[^atgcn-]", "", match.group(1))       # regex to remove digits from sequence data 
                 sequence.append(seq_1)
         
-sequence_data = list(zip(accession, sequence))  # zip information together 
+sequence_data = list(zip(accession, sequence))  # zip data together 
 
 # -------------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
