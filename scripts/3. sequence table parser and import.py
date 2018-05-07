@@ -21,13 +21,16 @@ accession = []
 for i in seq:
         for match in p.finditer(i):
                 accession.append(match.group(1))
+
                 
-p = re.compile(r'ORIGIN(.*\D)$')                                      # regex to extract sequence data 
-sequence = []
+p = re.compile(r'ORIGIN(.*)$')                                        # regex to extract sequence data      
+sequence = [] 
+sequence_1 = []
 for i in seq:
         for match in p.finditer(i):
-                seq_1 = re.sub('d+', '', match.group(1))       # regex to remove digits from sequence data 
+                seq_1 = re.sub('\d+', '', match.group(1))             # regex to remove digits from sequence data 
                 sequence.append(seq_1)
+              
         
 sequence_data = list(zip(accession, sequence))                        # zip data together 
 
