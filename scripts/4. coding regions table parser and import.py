@@ -32,7 +32,7 @@ p = re.compile(r'CDS\s+([^ ,]+)')                                          # reg
 positions = []
 for i in seq:
         for match in p.finditer(i):
-                pos_1 = re.sub(r'join', '', match.group(1))                # regex to remove splice varants 
+                pos_1 = re.sub(r'join', '', match.group(1))                # regex to remove splice variants 
                 positions.append(pos_1)            
                 
 coding_sequence = list(zip(accession, codon_start, positions))             # zip data together 
