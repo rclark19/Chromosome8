@@ -12,7 +12,7 @@ import pymysql
 # ---------------------------------------------------------------------------------------------------------------------------------
 #PHASE ONE - Parse data from Genbank file for Sequence MySQL table
 
-with open ('test_set.txt', 'r') as f:
+with open ('chrom_CDS_8', 'r') as f:
     chrom8 = f.read().replace('\n', '').replace(' ', '')              # removing new lines and all spaces 
     seq = chrom8.split('//')                                          # split string at // to create list 
 
