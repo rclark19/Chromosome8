@@ -30,7 +30,7 @@ cursor.execute(cnx_database)
 genbank_table = "CREATE TABLE genbank (accession VARCHAR(15) NOT NULL, gene VARCHAR(100), product VARCHAR(300), source VARCHAR(150), PRIMARY KEY(accession), INDEX(source)) ENGINE=InnoDB;"
 cursor.execute(genbank_table)
 
-sequence_table = "CREATE TABLE sequence (id MEDIUMINT NOT NULL AUTO_INCREMENT, accession VARCHAR(20) NOT NULL, sequence TEXT (10000) NOT NULL, PRIMARY KEY(id), FOREIGN KEY(accession) REFERENCES genbank(accession)) ENGINE=InnoDB;"
+sequence_table = "CREATE TABLE sequence (id MEDIUMINT NOT NULL AUTO_INCREMENT, accession VARCHAR(20) NOT NULL, sequence TEXT (100000) NOT NULL, PRIMARY KEY(id), FOREIGN KEY(accession) REFERENCES genbank(accession)) ENGINE=InnoDB;"
 cursor.execute(sequence_table)
 
 coding_table = "CREATE TABLE coding_regions (id MEDIUMINT NOT NULL AUTO_INCREMENT, accession VARCHAR(20) NOT NULL, codon_start INT(3), positions VARCHAR(100), PRIMARY KEY(id), FOREIGN KEY(accession) REFERENCES sequence(accession)) ENGINE=InnoDB;"
