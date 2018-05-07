@@ -1,10 +1,10 @@
-# File: 1.Chromosome8 database
+# File: 5.extact data from MySQL
 # Version: v1.0 
 # Date: 6/5/2018 
 # Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
 # Author: Rachel Julie Clark
 
-#Description of Script: The following script exports data from the three tables within the Chromosome8 database into python list format.
+#Description of Script: The following script exports data from the three tables within the Chromosome8 database into python list format
 
 import pymysql
 
