@@ -1,7 +1,11 @@
-Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:42:59) [MSC v.1500 32 bit (Intel)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> 
- RESTART: C:\Users\Invate\AppData\Local\lxss\root\biocompt\RUNNING SCRIPT\5. Extract data from MySQL.py 
+# File: 5a. extacted genabnk table data example
+# Version: v1.0 
+# Date: 6/5/2018 
+# Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
+# Author: Rachel Julie Clark
+
+# Description: example of genbank table data returned from the database layer for the middle layer to use 
+
 (('AB000381.1', 'GPAA1', 'GPI-anchored molecule-like protein', ' Homo sapiens (human) '), ('AB002137.1', 'GPAA1', 'glycosylphosphatidylinositol anchor attachment 1', ' Homo sapiens (human) '), ('AB007156.1', 'GPAA1', 'ribosomal protein S20', ' Homo sapiens (human) '), ('AB007168.1', 'GPAA1', 'ribosomal protein S20', ' Homo sapiens (human) '), ('AB013139.1', 'GPAA1', 'ribosomal protein S20', ' Homo sapiens (human) '), ('AB017267.1', 'GPAA1', 'ribosomal protein L8', ' Homo sapiens (human) '), ('AB022785.1', 'GPAA1', 'ribosomal protein L8', ' Homo sapiens (human) '), ('AB026546.1', 'GPAA1', 'ribosomal protein L8', ' Homo sapiens (human) '), ('AB032013.2', 'GPAA1', 'ribosomal protein L8', ' Homo sapiens (human) '), ('AB036532.2', 'GPAA1', 'NBS1', ' Homo sapiens (human) '), ('AB051619.1', 'GPAA1', 'glycosylphosphatidylinositol anchor attachment 1', ' Homo sapiens (human) '), ('AB052953.1', 'GPAA1', 'RECQL4 helicase', ' Homo sapiens (human) '), ('AB061209.1', 'GPAA1', 'potassium channel Kv8.1', ' Homo sapiens (human) '), ('AB061821.1', 'GPAA1', 'potassium channel Kv8.1', ' Homo sapiens (human) '), ('AB061842.1', 'GPAA1', 'potassium channel Kv8.1', ' Homo sapiens (human) '), ('AB065482.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065483.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065484.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065485.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065486.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065488.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065489.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065702.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065703.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB065704.1', 'GPAA1', 'ribonucleotide reductase', ' Homo sapiens (human) '), ('AB070559.1', 'GPAA1', 'mitochondrial ribosomal protein L15', ' Homo sapiens (human) '))
 export completed
 >>> 
