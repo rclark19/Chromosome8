@@ -4,7 +4,7 @@
 # Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
 # Author: Rachel Julie Clark
 
-#Description of Script: The following script creates the database 'Chromosome8' for the management of required data parsed parsed from Genbank file 'chrom_CDS_8'. For detailed information on selection of tables please see essay.
+#Description of Script: The following script creates the database 'Chromosome8' for the management of required data parsed parsed from Genbank file 'chrom_CDS_8'. For detailed information on selection of tables please see documentation.
 
 import pymysql
 
