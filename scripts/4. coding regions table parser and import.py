@@ -26,8 +26,7 @@ p = re.compile(r'codon_start=(\d+)')                                       # reg
 codon_start = []
 for i in seq:
         for match in p.finditer(i):
-                pos_1 = re.sub(r'join', '', match.group(1))                # regex to remove 'join' where it occurs
-                positions.append(pos_1)
+                codon_start.append(match.group(1))
             
 p = re.compile(r'CDS\s+([^ ,]+)')                                          # regex to extact coding regions
 positions = []
