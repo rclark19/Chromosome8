@@ -38,4 +38,4 @@ cursor.execute(coding_table)
 
 cnx.close()
 
-print('database created')   # confirm completion of script
+print('database created')   # confirm database creation 
