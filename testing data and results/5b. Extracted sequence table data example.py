@@ -1,4 +1,4 @@
-# File: 5a.extacted sequence table data example
+# File: 5b.extacted sequence table data example
 # Version: v1.0 
 # Date: 6/5/2018 
 # Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
