@@ -20,7 +20,7 @@ cnx = pymysql.connect(host=dbhost, port=port, user=dbuser, passwd=dbpass, db=dbn
 cursor = cnx.cursor(pymysql.cursors.DictCursor)
   
 with cnx.cursor() as  cursor:
-    query1 =  "SELECT accession, gene, product, source FROM genbank;"                 # Collate genbank table Data   
+    query1 =  "SELECT accession, gene, product, location FROM genbank;"                 # Collate genbank table Data   
     cursor.execute(query1)
     genbank = cursor.fetchall()
 
