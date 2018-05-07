@@ -64,4 +64,4 @@ cnx.commit()
 
 cnx.close()
 
-print('complete genbank table import')                 # sanity check / confirm data has been imported 
+print('complete genbank table import')                 # confirm data has been imported 
