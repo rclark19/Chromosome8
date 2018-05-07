@@ -49,10 +49,10 @@ genbank = list(zip(accession, gene, product, location))    # zip idata together
 
  # Set parameters 
 dbname = 'chromosome8'
-dbhost = '127.0.0.1'
-dbuser = 'root'
-dbpass = 'sasha9093' 
-port   = 3306
+dbhost = 
+dbuser = 
+dbpass = 
+port   = 
 
 # Connect to MySQL Database 
 cnx = pymysql.connect(host=dbhost, port=port, user=dbuser, passwd=dbpass, db=dbname)
