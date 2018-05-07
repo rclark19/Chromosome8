@@ -1,31 +1,37 @@
-# GenBank files (trial using sub set of Chromosome8 data) 
-# Data parser for Sequence information only
+# File: 2.genbank table parser and import
+# Version: v1.0 
+# Date: 6/5/2018 
+# Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
+# Author: Rachel Julie Clark
+
+# Description of Script: The following script is an parser and import script for file chrom_CDS_8, to extract data using regex (import re) for the table Sequence within the database Chromosome8 and import the data using pymysql (importpymysql) to the database. For more information please see documentation. 
 
 import re
 import pymysql
 
+# ---------------------------------------------------------------------------------------------------------------------------------
 #PHASE ONE - Parse data from Genbank file for Sequence MySQL table
 
 with open ('test_set.txt', 'r') as f:
-    chrom8 = f.read().replace('\n', '').replace(' ', '')                   # removing new lines and spaces 
-    seq = chrom8.split('//')                                                                     # spilit string at // to create list 
+    chrom8 = f.read().replace('\n', '').replace(' ', '')              # removing new lines and all spaces 
+    seq = chrom8.split('//')                                          # split string at // to create list 
 
-p = re.compile(r'VERSION(\w+\d+.\d+)') 
+p = re.compile(r'VERSION(\w+\d+.\d+)')                                # regex to extract the accession number - format 'XX000000.0'
 accession = []
 for i in seq:
         for match in p.finditer(i):
                 accession.append(match.group(1))
                 
-p = re.compile(r'ORIGIN(.*\D)$')
+p = re.compile(r'ORIGIN(.*\D)$')                                      # regex to extract sequence data 
 sequence = []
-sequence_1 = []
 for i in seq:
         for match in p.finditer(i):
-                seq_1 = re.sub("[^atgcn-]", "", match.group(1))
+                seq_1 = re.sub("[^atgcn-]", "", match.group(1))       # regex to remove digits from sequence data 
                 sequence.append(seq_1)
         
-sequence_data = list(zip(accession, sequence))  # zip information together to create a tuple
+sequence_data = list(zip(accession, sequence))  # zip information together 
 
+# -------------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
 
 # Set parameters 
@@ -46,4 +52,4 @@ cnx.commit()
 
 cnx.close()
 
-print('complete sequence table import')         # sanity check 
+print('complete sequence table import')                               # confirm data has been imported
