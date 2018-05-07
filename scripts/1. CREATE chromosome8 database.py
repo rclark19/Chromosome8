@@ -1,4 +1,10 @@
-# CREATE CHROMOSOME 8 DATABASE
+# File: 1.Chromosome8 database
+# Version: v1.0 
+# Date: 6/5/2018 
+# Copyright: (c) Rachel Julie Clark, Birkbeck, University of London, 2018
+# Author: Rachel Julie Clark
+
+#Description of Script: The following script creates the database 'Chromosome8' for the management of required data parsed parsed from Genbank file 'chrom_CDS_8'. For detailed information on selection of tables please see essay.
 
 import pymysql
 
