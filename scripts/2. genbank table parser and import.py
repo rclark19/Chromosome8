@@ -35,13 +35,13 @@ for i in data:
         for match in p.finditer(i):
                 product.append(match.group(1))
 
-p = re.compile(r'SOURCE([^ORGANISM]+)')                     # regex to extact source species
-source = []
+p = re.compile(r'\map="(\d[^ "]+)')                         # regex to extact chromosome location        
+location = []
 for i in data:
         for match in p.finditer(i):
-                source.append(match.group(1))
+                location.append(match.group(1))
 
-genbank = list(zip(accession, gene, product, source))       # zip data together
+genbank = list(zip(accession, gene, product, location))       # zip data together
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 # PHASE TWO - import data in to MySQL
@@ -57,7 +57,7 @@ port   =
 cnx = pymysql.connect(host=dbhost, port=port, user=dbuser, passwd=dbpass, db=dbname)
 cursor = cnx.cursor(pymysql.cursors.DictCursor)
 
-sql = "INSERT INTO genbank (accession, gene, product, source)  VALUES(%s, %s, %s, %s)"
+sql = "INSERT INTO genbank (accession, gene, product, location)  VALUES(%s, %s, %s, %s)"
 
 rows = cursor.executemany(sql, genbank)
 cnx.commit()
